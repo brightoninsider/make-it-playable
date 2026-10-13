@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>Signal Sprint — game starter</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="game-shell" aria-labelledby="game-title">
+      <header class="masthead">
+        <div>
+          <h1 id="game-title" data-title>Signal Sprint</h1>
+          <p data-subtitle>A small, finished Canvas game starter</p>
+        </div>
+        <div class="utilities" aria-label="Game utilities">
+          <button type="button" data-mute aria-pressed="false" disabled>Sound on</button>
+          <button type="button" data-pause disabled>Pause</button>
+        </div>
+      </header>
+      <section class="playframe" aria-label="Signal Sprint game">
+        <div class="hud" aria-label="Game status">
+          <div><span>Signals</span><strong data-score>0 / 8</strong></div>
+          <div><span>Time</span><strong data-clock>45s</strong></div>
+          <p>Goal: collect teal signals. Avoid red static.</p>
+        </div>
+        <canvas tabindex="0" width="960" height="540" aria-label="Game field. Move left and right to collect teal signals and avoid red static."></canvas>
+        <section class="menu" role="region" aria-labelledby="menu-heading">
+          <div>
+            <h2 id="menu-heading" data-menu-title>Catch the signals.</h2>
+            <p data-menu-copy>Loading the game. If this message remains, reload this page to try again.</p>
+            <button class="primary" type="button" data-primary disabled>Start round</button>
+            <p class="controls"><kbd>←</kbd><kbd>→</kbd> or <kbd>A</kbd><kbd>D</kbd> · touch or click either side of the field to steer · <kbd>P</kbd> pause · <kbd>M</kbd> mute</p>
+          </div>
+        </section>
+      </section>
+      <p class="sr-only" data-live aria-live="polite">Ready.</p>
+      <footer>Editable title and colours live at the top of <code>app.js</code>. No external services or tracking.</footer>
+    </main>
+    <script src="game-core.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Make It Playable"
+  short_description: "Build an original, testable browser game"
+  default_prompt: "Use $make-it-playable to turn my game idea into a playable browser prototype."
+
+policy:
+  allow_implicit_invocation: true

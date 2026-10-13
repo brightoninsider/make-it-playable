@@ -1,0 +1,32 @@
+:root { color-scheme: dark; font-family: ui-rounded, "Avenir Next", system-ui, sans-serif; background: #0f1929; color: #f7f4ed; }
+* { box-sizing: border-box; }
+body { min-height: 100vh; margin: 0; display: grid; place-items: center; background: radial-gradient(circle at 20% 5%, #294d76, transparent 33rem), #0f1929; }
+button { min-height: 44px; border: 1px solid rgba(247, 244, 237, .46); border-radius: 999px; padding: .55rem .9rem; background: rgba(15, 25, 41, .68); color: inherit; font: inherit; cursor: pointer; }
+button:hover { border-color: #f7f4ed; } button:focus-visible { outline: 3px solid #2ab7a9; outline-offset: 3px; } button:disabled { opacity: .5; cursor: not-allowed; }
+.game-shell { width: min(100%, 1080px); padding: clamp(1rem, 3vw, 2.5rem); }
+.masthead { display: flex; justify-content: space-between; align-items: end; gap: 1rem; margin-bottom: 1rem; }.masthead h1, .menu h2 { margin: 0; letter-spacing: -.05em; }.masthead p { margin: .2rem 0 0; color: #b8c8d9; }.utilities { display: flex; flex-wrap: wrap; gap: .5rem; }
+.playframe { position: relative; overflow: hidden; border: 1px solid rgba(247,244,237,.25); border-radius: 22px; box-shadow: 0 24px 80px rgba(0,0,0,.35); background: #16243b; }.hud { position: absolute; z-index: 1; top: 1rem; left: 1rem; display: grid; grid-template-columns: repeat(2, minmax(5rem, 1fr)); gap: .5rem; width: min(23rem, calc(100% - 2rem)); pointer-events: none; }.hud div, .hud p { margin: 0; padding: .45rem .6rem; border: 1px solid rgba(247,244,237,.2); border-radius: 10px; background: rgba(15,25,41,.72); backdrop-filter: blur(5px); }.hud span { display: block; color: #b8c8d9; font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }.hud strong { font-size: 1.08rem; }.hud p { grid-column: 1 / -1; color: #f7f4ed; font-size: .82rem; } canvas { display: block; width: 100%; touch-action: none; }
+.menu { position: absolute; z-index: 2; inset: 0; display: grid; place-items: center; padding: 1rem; background: linear-gradient(112deg, rgba(10,18,31,.92), rgba(16,30,50,.66)); }.menu[hidden] { display: none; }.menu > div { width: min(100%, 34rem); padding: clamp(1.25rem, 5vw, 3rem); border: 1px solid rgba(247,244,237,.3); border-radius: 18px; background: rgba(15,25,41,.77); box-shadow: 0 14px 60px rgba(0,0,0,.28); }.menu h2 { font-size: clamp(2rem, 5vw, 3.7rem); }.menu p { line-height: 1.55; color: #d7e0e9; }.primary { margin-top: .5rem; border-color: #2ab7a9; background: #2ab7a9; color: #102133; font-weight: 800; }.controls { margin-top: 1rem; font-size: .82rem; } kbd { display: inline-grid; min-width: 1.5rem; min-height: 1.5rem; place-items: center; margin: 0 .08rem; padding: 0 .25rem; border: 1px solid rgba(247,244,237,.4); border-radius: 4px; background: #20314d; font-family: ui-monospace, monospace; font-size: .72rem; } footer { margin-top: .9rem; color: #b8c8d9; font-size: .8rem; text-align: center; } code { color: #7ce8dc; }.sr-only { margin: 0; position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+@media (max-width: 570px) { .masthead { align-items: start; flex-direction: column; }.hud { top: .55rem; left: .55rem; width: calc(100% - 1.1rem); }.hud p { display: none; }.menu { align-items: start; }.menu > div { padding: .55rem .75rem; }.menu h2 { font-size: 1.6rem; line-height: 1; }.menu p { margin: .35rem 0; font-size: .78rem; line-height: 1.35; }.menu .primary { min-height: 40px; margin-top: .15rem; }.menu .controls { margin-top: .4rem; font-size: .6rem; line-height: 1.3; } kbd { min-width: 1.2rem; min-height: 1.2rem; font-size: .58rem; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+
+@media (max-width: 570px) {
+  .playframe { padding-top: 70px; }
+  .menu .primary { min-height: 44px; }
+}
+@media (max-height: 500px) and (min-width: 571px) {
+  .game-shell { width: min(100%, calc((100svh - 72px) * 16 / 9)); padding: 8px; }
+  .masthead { align-items: center; margin-bottom: 8px; }
+  .masthead h1 { font-size: 1.1rem; }
+  .masthead p, footer { display: none; }
+  .menu { padding: .5rem; }
+  .menu > div { padding: .65rem 1rem; }
+  .menu h2 { font-size: 1.5rem; }
+  .menu p { font-size: .75rem; line-height: 1.3; margin: .4rem 0; }
+  .menu .controls { font-size: .65rem; }
+  .primary { margin-top: 0; }
+  .hud { top: .5rem; left: .5rem; }
+  .hud p { display: none; }
+}
+
+canvas:focus-visible { outline: 3px solid #2ab7a9; outline-offset: -3px; }
